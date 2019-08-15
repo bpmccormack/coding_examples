@@ -1,0 +1,7 @@
+SELECT asin, sum(first_party_ordered_sales), sum(third_party_ordered_sales), client_id, week_beginning
+FROM full_calculated_data
+WHERE asin IN ('B07NQS6CJC')
+AND week_beginning BETWEEN '2019-01-01' AND '2019-07-07'
+AND client_id = 61
+GROUP BY asin, client_id
+ 
